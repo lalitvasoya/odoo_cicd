@@ -43,3 +43,11 @@ workflows:
       - Using-Python:
           requires:
             - Fetch-Code
+      - Hold-for-Approval:
+          type: approval
+          requires:
+            - Using-Python
+            - Fetch-Code
+      - Now-Complete:
+          requires:
+            - Hold-for-Approval
