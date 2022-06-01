@@ -31,7 +31,15 @@ jobs:
           name: Checking the version
           command: |
             python --version
-
+  
+  Now-Complete:
+    docker:
+      - image: alpine:3.15
+    steps:
+      - run:
+          name: approval complete
+          command: |
+            echo 'The work is now complete'
 
 workflows:
   test-workflow:
