@@ -2,7 +2,7 @@ version: 2
 
 jobs:
 
-  build:
+  linting-test:
     docker:
       - image: cimg/base:2021.04
     steps:
@@ -12,3 +12,9 @@ jobs:
       - run:
           name: Build Docker 
           command: docker-compose up --build -d
+      - run:
+          name: Linting
+          command: docker exec -i flask-practice bash -c "flake8"
+      - run:
+          name: Test
+          command: docker exec -i flask-practice bash -c "pytest"
