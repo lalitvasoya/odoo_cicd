@@ -18,3 +18,8 @@ jobs:
       - run:
           name: Test
           command: docker exec -i flask-practice bash -c "pytest"
+
+workflows:
+  cicd-workflows:
+    jobs:
+      - linting-test
