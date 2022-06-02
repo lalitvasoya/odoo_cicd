@@ -1,4 +1,3 @@
-# demo docker with jenkins
 FROM python:3.8
 
 WORKDIR /cicd_demo
