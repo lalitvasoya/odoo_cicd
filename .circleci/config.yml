@@ -13,10 +13,10 @@ jobs:
           command: docker-compose up --build -d
       - run:
           name: Linting
-          command: docker exec -i flask-practice bash -c "flake8"
+          command: docker exec -i cicd-demo bash -c "flake8"
       - run:
           name: Test
-          command: docker exec -i flask-practice bash -c "pytest"
+          command: docker exec -i cicd-demo bash -c "pytest"
 
 workflows:
   cicd-workflows:
