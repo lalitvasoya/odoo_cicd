@@ -1,4 +1,8 @@
 version: 2.1
+
+orbs:
+  aws-ecs: circleci/aws-ecs@2.2.1
+
 jobs:
 
   linting-test:
@@ -30,6 +34,7 @@ jobs:
       - run:
           name: list files
           command: ls -al
+      
       - run:
           name: deploy
           command: source deploy_bash/build.sh
@@ -41,4 +46,8 @@ workflows:
       - deploy:
           requires:
             - linting-test
+      - aws-ecs/deploy-service-update:
+          cluster-name: ami-079b5e5b3971bd10d 
+          family: source deploy_bash/build.sh 
+      
 
