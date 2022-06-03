@@ -22,13 +22,13 @@ jobs:
   deploy:
     docker:
       - image: cimg/base:2021.04
-    steps:
+    steps: 
       - add_ssh_keys:
           fingerprints:
             - 5c:53:dc:d1:2d:e6:32:9c:e3:b1:8e:d4:82:31:66:29
       - run:
           name: deploy
-          command: source deploy/build.sh
+          command: source deploy_bash/build.sh
 
 workflows:
   cicd-workflows:
