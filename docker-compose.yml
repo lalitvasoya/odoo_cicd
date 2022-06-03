@@ -5,4 +5,4 @@ services:
     container_name: cicd-demo
     command: flask run --host=0.0.0.0 --port=5001
     ports:
-      - "5001:5001"
+      - "80:5001"
