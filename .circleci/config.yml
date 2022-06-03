@@ -18,8 +18,20 @@ jobs:
       - run:
           name: Test
           command: docker exec -i cicd-demo bash -c "pytest"
+  
+  deploy:
+    docker:
+      - image: cimg/base:2021.04
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - 5c:53:dc:d1:2d:e6:32:9c:e3:b1:8e:d4:82:31:66:29
+      - run:
+          name: deploy
+          command: source deploy/build.sh
 
 workflows:
   cicd-workflows:
     jobs:
       - linting-test
+      - deploy
