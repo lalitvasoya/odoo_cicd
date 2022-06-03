@@ -27,6 +27,9 @@ jobs:
           fingerprints:
             - 5c:53:dc:d1:2d:e6:32:9c:e3:b1:8e:d4:82:31:66:29
       - run:
+          name: list files
+          command: ls -al
+      - run:
           name: deploy
           command: source deploy_bash/build.sh
 
@@ -34,4 +37,7 @@ workflows:
   cicd-workflows:
     jobs:
       - linting-test
-      - deploy
+      - deploy:
+          requires:
+            - linting-test
+
