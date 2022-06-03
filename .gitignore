@@ -9,3 +9,4 @@ env.sh
 celerybeat-schedule
 .vscode
 /.env
+env.sh
