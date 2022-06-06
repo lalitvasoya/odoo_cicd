@@ -6,7 +6,7 @@ echo "****************************"
 
 
 # change dir to worksapce
-cd flask_demo
+cd odoo_cicd
 
 docker-compose down
 
