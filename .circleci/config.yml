@@ -32,7 +32,7 @@ jobs:
           command: ls -al
       - run:
           name: deploy
-          command: source deploy_bash/build.sh
+          command: ssh -o StrictHostKeyChecking=no  ubuntu@13.234.77.55 "source deploy_bash/build.sh"
 
 workflows:
   cicd-workflows:

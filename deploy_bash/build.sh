@@ -8,6 +8,8 @@ echo "****************************"
 # change dir to worksapce
 cd flask_demo
 
+docker-compose down
+
 source env.sh
 
 git checkout $BRANCH
