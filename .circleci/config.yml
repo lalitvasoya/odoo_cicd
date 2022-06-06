@@ -35,7 +35,10 @@ jobs:
       
       - run:
           name: deploy
-          command: ssh -o StrictHostKeyChecking=no  ubuntu@13.234.77.55 "source deploy_bash/build.sh"
+          command: >
+            ssh -o StrictHostKeyChecking=no 
+            ec2-user@ec2-52-66-146-90.ap-south-1.compute.amazonaws.com
+            "source deploy_bash/build.sh"
 
 workflows:
   cicd-workflows:
