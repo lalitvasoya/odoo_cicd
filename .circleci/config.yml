@@ -9,10 +9,10 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker:
-          docker_layer_caching: true 
+          docker_layer_caching: true
           version: 20.10.14
       - run:
-          name: Build Docker 
+          name: Build Docker
           command: docker-compose up --build -d
       - run:
           name: Linting
@@ -20,11 +20,11 @@ jobs:
       - run:
           name: Test
           command: docker exec -i cicd-demo bash -c "pytest"
-  
+
   deploy:
     docker:
       - image: cimg/base:2021.04
-    steps: 
+    steps:
       - add_ssh_keys:
           fingerprints:
             - 5c:53:dc:d1:2d:e6:32:9c:e3:b1:8e:d4:82:31:66:29
@@ -32,11 +32,17 @@ jobs:
       - run:
           name: list files
           command: ls -al
-      
+
       - run:
           name: deploy
           command: >
             ssh -o StrictHostKeyChecking=no $SERVER_HOST "cd odoo_cicd && source deploy_bash/build.sh $CIRCLE_BRANCH $GIT_USERNAME $GIT_PASSWORD"
+
+      - run:
+          name: Success
+          when: on_success
+          command: >
+            source build.sh
 
 workflows:
   cicd-workflows:
