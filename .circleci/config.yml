@@ -44,8 +44,7 @@ jobs:
           command: |
             curl --header "Content-Type: application/json" \
             --request POST
-            --data "{\"cards\":[{\"header\":{\"title\":\"${CIRCLE_JOB} successful.\",\"subtitle\":\"${CIRCLE_PROJECT_REPONAME}-${CIRCLE_BRANCH}\",\"imageUrl\":\"https://png.pngtree.com/svg/20170510/success_404253.png\",\"imageStyle\":\"IMAGE\"},\"sections\":[{\"widgets\":[{\"keyValue\":{\"topLabel\":\"${CIRCLE_TAG}\",\"content\":\"Credits - ${CIRCLE_USERNAME}\"}}]},{\"widgets\":[{\"buttons\":[{\"textButton\":{\"text\":\"DETAILS\",\"onClick\":{\"openLink\":{\"url\":\"${CIRCLE_BUILD_URL}\"}}}}]}]}]}]}" \
-            https://chat.googleapis.com/v1/spaces/AAAAs53zmQs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=5aWvA08AMpKDDaq7mBeRrsF_CF5PIsW4KAQgzfA3EBA%3D
+            --data "{\"cards\":[{\"header\":{\"title\":\"${CIRCLE_JOB} successful.\",\"subtitle\":\"${CIRCLE_PROJECT_REPONAME}-${CIRCLE_BRANCH}\",\"imageUrl\":\"https://png.pngtree.com/svg/20170510/success_404253.png\",\"imageStyle\":\"IMAGE\"},\"sections\":[{\"widgets\":[{\"keyValue\":{\"topLabel\":\"${CIRCLE_TAG}\",\"content\":\"Credits - ${CIRCLE_USERNAME}\"}}]},{\"widgets\":[{\"buttons\":[{\"textButton\":{\"text\":\"DETAILS\",\"onClick\":{\"openLink\":{\"url\":\"${CIRCLE_BUILD_URL}\"}}}}]}]}]}]}" https://chat.googleapis.com/v1/spaces/AAAAs53zmQs/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=5aWvA08AMpKDDaq7mBeRrsF_CF5PIsW4KAQgzfA3EBA%3D
 
 workflows:
   cicd-workflows:
