@@ -41,8 +41,7 @@ jobs:
       - run:
           name: Success
           when: on_success
-          command: >
-            source deploy_bash/build.sh
+          command: source deploy_bash/on_success.sh
 
 workflows:
   cicd-workflows:
