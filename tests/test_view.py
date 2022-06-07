@@ -4,7 +4,7 @@ class TestFlaskRoute:
 
     def test_status_success(self, client):
         response = client.get('/status')
-        assert response.json['status'] == 'Flask with CICD'
+        assert response.json['status'] == 'Flask with CICD!'
         assert response.status == '200 OK'
 
     def test_factorial_success(self, client):
