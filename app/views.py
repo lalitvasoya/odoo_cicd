@@ -5,7 +5,7 @@ from flask import jsonify, request
 class ApiTest(MethodView):
 
     def get(self):
-        return jsonify({"status": "Flask testing!"})
+        return jsonify({"status": "Flask with CICD!"})
 
 
 class Factorial(MethodView):
