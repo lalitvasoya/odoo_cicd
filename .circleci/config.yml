@@ -36,9 +36,7 @@ jobs:
       - run:
           name: deploy
           command: >
-            ssh -o StrictHostKeyChecking=no 
-            ec2-user@ec2-52-66-146-90.ap-south-1.compute.amazonaws.com
-            "cd odoo_cicd && source deploy_bash/build.sh"
+            ssh -o StrictHostKeyChecking=no $SERVER_HOST $DEPLOY_COMMAND
 
 workflows:
   cicd-workflows:
