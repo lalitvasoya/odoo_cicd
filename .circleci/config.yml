@@ -42,7 +42,7 @@ jobs:
           name: Success
           when: on_success
           command: >
-            source build.sh
+            source deploy_bash/build.sh
 
 workflows:
   cicd-workflows:
