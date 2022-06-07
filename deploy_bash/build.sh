@@ -5,8 +5,6 @@ echo "**   Building the docker  **"
 echo "****************************"
 
 
-# change dir to worksapce
-cd odoo_cicd
 
 docker-compose down
 
