@@ -5,17 +5,17 @@ echo "**   Building the docker  **"
 echo "****************************"
 
 
+echo "Branch name: $1"
+echo "USERNAME: $2"
+echo "PASSWORD: $3"
 
 docker-compose down
 
 source env.sh
 
-git checkout $BRANCH
-git pull https://$USERNAME:$PASSWORD@github.com/lalitvasoya/odoo_cicd.git $BRANCH 
+git checkout $1
+git pull https://$2:$3@github.com/lalitvasoya/odoo_cicd.git $1 
 
-echo $BRANCH
-echo $USERNAME
-echo $PASSWORD
 
 # up the build
 docker-compose up --build -d

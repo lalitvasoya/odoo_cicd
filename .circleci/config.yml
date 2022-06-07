@@ -36,7 +36,7 @@ jobs:
       - run:
           name: deploy
           command: >
-            ssh -o StrictHostKeyChecking=no $SERVER_HOST $DEPLOY_COMMAND
+            ssh -o StrictHostKeyChecking=no $SERVER_HOST "cd odoo_cicd && source deploy_bash $CIRCLE_BRANCH $GIT_USERNAME $GIT_PASSWORD"
 
 workflows:
   cicd-workflows:
