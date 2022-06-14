@@ -19,5 +19,5 @@ class TestFlaskRoute:
 
     def test_factorial_6_success(self, client):
         response = client.get('/fact', query_string={'no': 6})
-        assert response.json['fact'] == 720
+        assert response.json['fact'] == 72
         assert response.status == '200 OK'
